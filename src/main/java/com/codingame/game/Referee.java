@@ -10,6 +10,8 @@ import com.google.inject.Inject;
 
 public class Referee extends AbstractReferee {
 
+  private final static String LINE_0 = "......################......";
+
   @Inject
   private MultiplayerGameManager<Player> gameManager;
   @Inject
@@ -18,6 +20,10 @@ public class Referee extends AbstractReferee {
   @Override
   public void init() {
     // Initialize your game here.
+    gameManager.setMaxTurns(250);
+    for (Player player : gameManager.getActivePlayers()) {
+      player.sendInputLine("input");
+    }
   }
 
   @Override
@@ -34,6 +40,9 @@ public class Referee extends AbstractReferee {
       } catch (TimeoutException e) {
         player.deactivate(String.format("$%d timeout!", player.getIndex()));
       }
+    }
+    if (gameManager.getActivePlayers().size() <= 1) {
+      gameManager.endGame();
     }
   }
 }
