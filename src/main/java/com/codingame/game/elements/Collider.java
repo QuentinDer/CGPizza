@@ -1,8 +1,8 @@
 package com.codingame.game.elements;
 
-public class Collider extends Position {
+public class Collider extends Element {
 
-  private int size;
+  protected int size;
 
   public Collider(int x, int y, int size) {
     super(x, y);

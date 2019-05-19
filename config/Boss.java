@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Try to deal as much damage to the boss as possible and survive its onslaught !
  **/
-public class Agent2 {
+public class Boss {
 
   public static void main(String args[]) {
     Scanner in = new Scanner(System.in);
@@ -49,12 +49,12 @@ public class Agent2 {
       // Write an action using System.out.println()
       // To debug: System.err.println("Debug messages...");
 
-      System.out.println("WAIT"); // MOVE x y | FIRE x y | EQUIP weapon
+      System.out.println("WAIT"); // MOVE x y | FIRE x y | EQUIP weapon | WAIT
 
       // Write an action using System.out.println()
       // To debug: System.err.println("Debug messages...");
 
-      System.out.println("WAIT"); // MOVE x y | FIRE x y | EQUIP weapon
+      System.out.println("WAIT"); // MOVE x y | FIRE x y | EQUIP weapon | WAIT
     }
   }
 }

@@ -9,8 +9,8 @@ read nbBarrels:int
 loop nbBarrels read bX:int bY:int
 read nbPotions:int
 loop nbPotions read pX:int pY:int
-write join("MOVE", "8", "8")
-write join("MOVE", "8", "8")
+write join("WAIT")
+write join("WAIT")
 STATEMENT
 Try to deal as much damage to the boss as possible and survive its onslaught !
 
@@ -39,4 +39,4 @@ pX: horizontal position of the potion
 pY: vertical position of the potion
 
 OUTPUT
-MOVE x y | FIRE x y | EQUIP weapon
+MOVE x y | FIRE x y | EQUIP weapon | WAIT
