@@ -1,5 +1,6 @@
 package com.codingame.game;
 
+import java.util.Arrays;
 import java.util.List;
 
 import com.codingame.gameengine.core.AbstractPlayer.TimeoutException;
@@ -10,7 +11,23 @@ import com.google.inject.Inject;
 
 public class Referee extends AbstractReferee {
 
-  private final static String LINE_0 = "......################......";
+  private final static List<String> MAP = Arrays.asList(//
+      "......##################......", //
+      "....###................###....", //
+      "..###....................###..", //
+      ".##........................##.", //
+      ".##........................##.", //
+      ".##........................##.", //
+      ".##........................##.", //
+      ".##........................##.", //
+      ".##........................##.", //
+      ".##........................##.", //
+      ".##........................##.", //
+      ".##........................##.", //
+      ".##........................##.", //
+      "..###....................###..", //
+      "....###................###....", //
+      "......##################......");
 
   @Inject
   private MultiplayerGameManager<Player> gameManager;
@@ -22,7 +39,7 @@ public class Referee extends AbstractReferee {
     // Initialize your game here.
     gameManager.setMaxTurns(250);
     for (Player player : gameManager.getActivePlayers()) {
-      player.sendInputLine("input");
+      MAP.forEach(player::sendInputLine);
     }
   }
 

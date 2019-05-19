@@ -1,0 +1,42 @@
+loop 16 read mapLine:word(30)
+gameloop
+loop 3 read id:int eX:int eY:int health:int state:int weapon:int
+read nbProjectiles:int
+loop nbProjectiles read pX:int pY:int pVX:int pVY:int pType:int
+read nbExplosions:int
+loop nbExplosions read expX:int expY:int turns:int
+read nbBarrels:int
+loop nbBarrels read bX:int bY:int
+read nbPotions:int
+loop nbPotions read pX:int pY:int
+write join("MOVE", "8", "8")
+write join("MOVE", "8", "8")
+STATEMENT
+Try to deal as much damage to the boss as possible and survive its onslaught !
+
+INPUT
+mapLine: the map of the fight
+id: 0 is you, 1 is the other player, 2 is the boss
+eX: horizontal position of the entity
+eY: vertical position of the entity
+health: current health of the entity
+state: state of the entity
+weapon: equipped weapon of the entity
+nbProjectiles: number of projectiles
+pX: horizontal position of the projectile
+pY: vertical position of the projectile
+pVX: the horizontal speed of the projectile
+pVY: the vertical speed of the projectile
+pType: the type of the projectile
+nbExplosions: number of explosions
+expX: horizontal position of the explosion
+expY: vertical position of the explosion
+nbBarrels: number of barrels
+bX: horizontal position of the barrel
+bY: vertical position of the barrel
+nbPotions: number of potions
+pX: horizontal position of the potion
+pY: vertical position of the potion
+
+OUTPUT
+MOVE x y | FIRE x y | EQUIP weapon
